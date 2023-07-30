@@ -44,7 +44,9 @@ const actualizarProductos = async (req, res) => {
 
 const borrarProductos = async (req, res) => {
   const { id } = req.params;
+//Borrado lógico : await Product.findByIdAndUpdate(id,{disponible: false})
 
+//Borrado físico:
   await Product.findByIdAndDelete(id);
 
   res.status(200).json({
